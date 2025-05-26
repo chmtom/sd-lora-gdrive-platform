@@ -1,8 +1,7 @@
 #!/bin/bash
 set -e
 
-# Clean old clone if exists
-rm -rf runpod-sd-platform
+rm -rf sd-lora-gdrive-platform
 
 echo "[Clone] Pulling project from GitHub..."
 git clone https://github.com/chmtom/sd-lora-gdrive-platform.git
@@ -20,10 +19,7 @@ ln -s /mnt/gdrive/data/train /data || true
 ln -s /mnt/gdrive/outputs /outputs || true
 ln -s /mnt/gdrive/prompts /prompts || true
 
-# Kopiowanie pliku stylów
 cp /mnt/gdrive/styles/styles.csv /stable-diffusion-webui/styles.csv || true
-
-# Kopiowanie config.json z ustawieniami (np. pattern nazw plików)
 cp /mnt/gdrive/configs/config.json /stable-diffusion-webui/config.json || true
 
 mkdir -p /logs
