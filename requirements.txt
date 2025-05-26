@@ -1,0 +1,6 @@
+requests
+rclone
+xformers
+torch
+torchvision
+torchaudio
