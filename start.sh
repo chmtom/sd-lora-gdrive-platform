@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-cd /workspace
+# cd /workspace
 if [ ! -d "runpod-sd-platform" ]; then
     echo "[Clone] Pulling project from GitHub..."
     git clone https://github.com/chmtom/runpod-sd-platform.git
