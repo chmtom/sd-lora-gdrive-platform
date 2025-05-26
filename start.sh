@@ -1,13 +1,13 @@
 #!/bin/bash
 set -e
 
-# cd /workspace
-if [ ! -d "runpod-sd-platform" ]; then
-    echo "[Clone] Pulling project from GitHub..."
-    git clone https://github.com/chmtom/runpod-sd-platform.git
-fi
+# Clean old clone if exists
+rm -rf runpod-sd-platform
 
-cd runpod-sd-platform
+echo "[Clone] Pulling project from GitHub..."
+git clone https://github.com/chmtom/sd-lora-gdrive-platform.git
+
+cd sd-lora-gdrive-platform
 
 echo "[RunPod SD Platform] Mounting Google Drive..."
 rclone --config /root/.config/rclone/rclone.conf mount gdrive: /mnt/gdrive --daemon
